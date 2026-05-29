@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ── Map CSS vars → Tailwind color tokens (hsl wrapper required for v4) ── */
+  --color-background:         hsl(var(--background));
+  --color-foreground:         hsl(var(--foreground));
+  --color-card:               hsl(var(--card));
+  --color-card-foreground:    hsl(var(--card-foreground));
+  --color-popover:            hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary:            hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary:          hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted:              hsl(var(--muted));
+  --color-muted-foreground:   hsl(var(--muted-foreground));
+  --color-accent:             hsl(var(--accent));
+  --color-accent-foreground:  hsl(var(--accent-foreground));
+  --color-destructive:        hsl(var(--destructive));
+  --color-border:             hsl(var(--border));
+  --color-input:              hsl(var(--input));
+  --color-ring:               hsl(var(--ring));
+  --color-sidebar:            hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary:    hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent:     hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border:     hsl(var(--sidebar-border));
+  --color-sidebar-ring:       hsl(var(--sidebar-ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  /* ── Radius scale ── */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* ── Fonts ── */
+  --font-sans:    'Open Sans', system-ui, sans-serif;
+  --font-heading: 'Montserrat', system-ui, sans-serif;
+  --font-mono:    var(--font-geist-mono);
+
+  /* ── CIO/CxO direct brand tokens ── */
+  --color-navy:               #173962;
+  --color-navy-dark:          #0a1628;
+  --color-navy-light:         #1e4a7c;
+  --color-gold:               #c9a34b;
+  --color-gold-light:         #d7bf67;
+  --color-gold-dark:          #a1823c;
+  --color-corporate-red:      #de2729;
+  --color-corporate-red-light:#e75456;
+}
+
+/* ── Raw HSL channel variables (used via hsl(var(...)) above) ───────────── */
+:root {
+  --background:         0 0% 100%;
+  --foreground:         215 25% 15%;
+  --card:               0 0% 100%;
+  --card-foreground:    215 25% 15%;
+  --popover:            0 0% 100%;
+  --popover-foreground: 215 25% 15%;
+  --primary:            213 62% 23%;        /* Navy #173962 */
+  --primary-foreground: 0 0% 100%;
+  --secondary:          210 20% 96%;
+  --secondary-foreground: 215 25% 15%;
+  --muted:              210 20% 96%;
+  --muted-foreground:   215 16% 47%;
+  --accent:             38 47% 54%;         /* Gold #C9A34B */
+  --accent-foreground:  213 62% 23%;
+  --destructive:        358 74% 51%;        /* Red #DE2729 */
+  --border:             214 32% 91%;
+  --input:              214 32% 91%;
+  --ring:               38 47% 54%;
+  --radius:             0.75rem;
+
+  --chart-1: 213 62% 23%;
+  --chart-2: 38 47% 54%;
+  --chart-3: 358 74% 51%;
+  --chart-4: 213 40% 45%;
+  --chart-5: 38 47% 65%;
+
+  --sidebar:                    213 62% 15%;
+  --sidebar-foreground:         210 30% 88%;
+  --sidebar-primary:            38 47% 54%;
+  --sidebar-primary-foreground: 213 62% 10%;
+  --sidebar-accent:             213 50% 22%;
+  --sidebar-accent-foreground:  0 0% 100%;
+  --sidebar-border:             213 50% 25%;
+  --sidebar-ring:               38 47% 54%;
+}
+
+/* ── Base styles ─────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* ── CIO Brand Utility Classes ───────────────────────────────────────────── */
+.font-heading { font-family: 'Montserrat', system-ui, sans-serif; }
+.font-body    { font-family: 'Open Sans',  system-ui, sans-serif; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 9999px;
+  color: #173962;
+  background-color: #c9a34b;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 14px rgba(201,163,75,0.35);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #d7bf67;
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(201,163,75,0.45);
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  color: #ffffff;
+  background-color: #de2729;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s;
+  box-shadow: 0 4px 12px rgba(222,39,41,0.25);
+  text-decoration: none;
+}
+.btn-cta:hover    { background-color: #e75456; }
+.btn-cta:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #173962;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #c9a34b, #d7bf67);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.9rem;
+  border-radius: 9999px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background-color: rgba(201,163,75,0.12);
+  color: #c9a34b;
+  border: 1px solid rgba(201,163,75,0.3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* White dots — for dark/navy backgrounds (hero, login, register panels)
+   Use directly: className="pattern-dots"  — no extra opacity wrapper needed */
+.pattern-dots {
+  background-image: radial-gradient(circle, rgba(255,255,255,0.22) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  background-position: 14px 14px;   /* offset so dots start centred in each cell */
+}
+
+/* Navy dots — for light backgrounds (app shell)  */
+.pattern-dots-light {
+  background-image: radial-gradient(circle, rgba(23,57,98,0.1) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  background-position: 14px 14px;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  background: linear-gradient(90deg, #c9a34b, #173962);
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+.feature-card:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  border-color: rgba(201,163,75,0.35);
+}
+.feature-card:hover::before { transform: scaleX(1); }
+
+/* Custom scrollbar */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #c9a34b; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #a1823c; }
+::selection { background: #c9a34b; color: #173962; }
