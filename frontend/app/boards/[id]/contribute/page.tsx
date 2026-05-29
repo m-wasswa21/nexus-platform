@@ -102,8 +102,10 @@ export default function ContributePage() {
       {/* ── Navbar ── */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg shadow-sm" style={{ borderBottom: "1px solid rgba(23,57,98,0.09)" }}>
         <div className="max-w-6xl mx-auto px-5 h-[60px] flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-2.5">
             <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={130} height={38} className="h-9 w-auto object-contain" priority />
+            <div className="w-px h-6 bg-slate-300" />
+            <Image src="/uds-logo.png" alt="Uganda Digital Society" width={100} height={38} className="h-8 w-auto object-contain" />
           </Link>
           <Link href="/login"
             className="flex items-center gap-1.5 px-4 py-2 rounded-full font-heading font-bold text-xs transition-all hover:scale-105"
@@ -191,6 +193,13 @@ export default function ContributePage() {
               </motion.div>
             )}
           </motion.div>
+
+          {/* Co-branding strip */}
+          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mt-8 opacity-50">
+            <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={90} height={28} className="h-6 w-auto object-contain brightness-0 invert" />
+            <div className="w-px h-4 bg-white/40" />
+            <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain brightness-0 invert" />
+          </motion.div>
         </div>
 
       </div>
@@ -270,12 +279,11 @@ export default function ContributePage() {
             </AnimatePresence>
 
             {/* Platform credit */}
-            <p className="text-center text-[11px] text-slate-400 font-heading">
-              Powered by{" "}
-              <Link href="/" className="font-bold hover:opacity-70 transition-opacity" style={{ color: "#c9a34b" }}>
-                Nexus · CIO/CxO Africa
-              </Link>
-            </p>
+            <div className="flex items-center justify-center gap-3">
+              <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={90} height={28} className="h-7 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity" />
+              <div className="w-px h-5 bg-slate-300" />
+              <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity" />
+            </div>
           </div>
 
           {/* ── RIGHT — Posts ── */}

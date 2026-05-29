@@ -31,8 +31,10 @@ export default function LandingPage() {
       {/* ── NAVBAR ─────────────────────────────────────────────────── */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-lg border-b border-slate-200/80 shadow-sm shadow-navy/5">
         <div className="max-w-7xl mx-auto px-6 lg:px-6 h-[72px] flex items-center justify-between">
-          <Link href="/" className="flex-shrink-0">
+          <Link href="/" className="flex-shrink-0 flex items-center gap-3">
             <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={150} height={44} className="h-10 w-auto object-contain" priority />
+            <div className="w-px h-7 bg-slate-300" />
+            <Image src="/uds-logo.png" alt="Uganda Digital Society" width={110} height={44} className="h-9 w-auto object-contain" />
           </Link>
           <div className="hidden md:flex items-center gap-1">
             {["Features", "Compare", "Community"].map((item) => (
@@ -233,9 +235,13 @@ export default function LandingPage() {
       {/* ── FOOTER ─────────────────────────────────────────────────── */}
       <footer style={{ backgroundColor: "#0a1628" }} className="text-white py-10">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={120} height={36} className="h-8 w-auto object-contain brightness-0 invert opacity-70" />
+          <div className="flex items-center gap-3">
+            <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={120} height={36} className="h-8 w-auto object-contain brightness-0 invert opacity-70" />
+            <div className="w-px h-6 bg-white/20" />
+            <Image src="/uds-logo.png" alt="Uganda Digital Society" width={90} height={36} className="h-8 w-auto object-contain brightness-0 invert opacity-70" />
+          </div>
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-            © 2026 Nexus — CIO/CxO Africa Digital Leadership Forum
+            © 2026 Nexus — CIO/CxO Africa &amp; Uganda Digital Society
           </p>
           <div className="flex items-center gap-4">
             <Link href="/login" className="text-sm font-heading font-semibold hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.5)" }}>Sign In</Link>
