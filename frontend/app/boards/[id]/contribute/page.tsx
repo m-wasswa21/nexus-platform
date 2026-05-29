@@ -11,7 +11,7 @@ import dynamic from "next/dynamic";
 import PostCard from "@/components/boards/PostCard";
 import AddPostForm from "@/components/boards/AddPostForm";
 import DiceBearAvatar from "@/components/ui/DiceBearAvatar";
-import { Users2, MessageSquare, Eye, ArrowRight, Sparkles } from "lucide-react";
+import { Users2, MessageSquare, Eye, ArrowRight } from "lucide-react";
 
 const Confetti = dynamic(() => import("react-confetti"), { ssr: false });
 
@@ -132,13 +132,6 @@ export default function ContributePage() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-5 py-14 md:py-20">
           <motion.div variants={stagger} initial="hidden" animate="show" className="text-center">
-
-            {/* Board type badge */}
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6"
-              style={{ backgroundColor: "rgba(255,255,255,0.25)", border: "1px solid rgba(255,255,255,0.4)", backdropFilter: "blur(8px)" }}>
-              <Sparkles className="w-3 h-3 text-white/80" />
-              <span className="text-[11px] font-heading font-bold uppercase tracking-[0.18em] text-white/90">{meta.label} Board</span>
-            </motion.div>
 
             {/* Title */}
             <motion.h1 variants={fadeUp}
