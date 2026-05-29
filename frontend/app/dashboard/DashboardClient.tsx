@@ -1,5 +1,5 @@
-import { parseUTC } from "@/lib/utils";
 "use client";
+import { parseUTC } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/useAuth";
 import { api } from "@/lib/api";

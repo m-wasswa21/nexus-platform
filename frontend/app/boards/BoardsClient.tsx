@@ -1,5 +1,5 @@
-import { parseUTC } from "@/lib/utils";
 "use client";
+import { parseUTC } from "@/lib/utils";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 import { Board } from "@/types";
