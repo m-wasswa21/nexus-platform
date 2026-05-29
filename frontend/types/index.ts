@@ -21,7 +21,7 @@ export interface TokenOut {
   user: User;
 }
 
-export type BoardType = "appreciation" | "birthday" | "farewell" | "milestone" | "graduation" | "signoff";
+export type BoardType = "appreciation" | "birthday" | "farewell" | "milestone" | "graduation";
 
 export interface BoardPost {
   id: number;

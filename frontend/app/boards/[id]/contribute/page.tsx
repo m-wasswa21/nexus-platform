@@ -21,7 +21,6 @@ const BOARD_META: Record<string, { emoji: string; label: string; accent: string 
   farewell:     { emoji: "👋", label: "Farewell",      accent: "#f97316" },
   milestone:    { emoji: "🏆", label: "Milestone",     accent: "#8b5cf6" },
   graduation:   { emoji: "🎓", label: "Graduation",    accent: "#0ea5e9" },
-  signoff:      { emoji: "🌟", label: "Sign-off",       accent: "#c9a34b" },
 };
 
 const fadeUp = {

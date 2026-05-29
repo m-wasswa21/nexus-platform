@@ -15,11 +15,11 @@ import DiceBearAvatar from "@/components/ui/DiceBearAvatar";
 
 const BOARD_COLOR: Record<string, string> = {
   appreciation: "#173962", birthday: "#e91e8c", farewell: "#f97316",
-  milestone: "#8b5cf6", graduation: "#0ea5e9", signoff: "#c9a34b",
+  milestone: "#8b5cf6", graduation: "#0ea5e9",
 };
 const BOARD_EMOJI: Record<string, string> = {
   appreciation: "🙏", birthday: "🎂", farewell: "👋",
-  milestone: "🏆", graduation: "🎓", signoff: "🌟",
+  milestone: "🏆", graduation: "🎓",
 };
 
 /* ── Shared page container — same padding on every section ────── */

@@ -12,7 +12,6 @@ class BoardType(str, enum.Enum):
     FAREWELL = "farewell"
     MILESTONE = "milestone"
     GRADUATION = "graduation"
-    SIGNOFF = "signoff"
 
 
 class Board(Base):

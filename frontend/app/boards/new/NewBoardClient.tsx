@@ -33,13 +33,13 @@ const THEMES = [
 
 const BOARD_EMOJIS: Record<string, string> = {
   appreciation: "🙏", birthday: "🎂", farewell: "👋",
-  milestone: "🏆", graduation: "🎓", signoff: "🌟",
+  milestone: "🏆", graduation: "🎓",
 };
 
 const schema = z.object({
   title: z.string().min(3, "Title must be at least 3 characters"),
   description: z.string().optional(),
-  board_type: z.enum(["appreciation", "birthday", "farewell", "milestone", "graduation", "signoff"]),
+  board_type: z.enum(["appreciation", "birthday", "farewell", "milestone", "graduation"]),
   recipient_name: z.string().min(2, "Recipient name required"),
   recipient_email: z.string().email().optional().or(z.literal("")),
   is_public: z.boolean(),
@@ -209,7 +209,7 @@ export default function NewBoardClient() {
               <SelectTrigger className="h-11 border-slate-200 rounded-xl"><SelectValue /></SelectTrigger>
               <SelectContent>
                 {[["appreciation","🙏 Appreciation"],["birthday","🎂 Birthday"],["farewell","👋 Farewell"],
-                  ["milestone","🏆 Milestone"],["graduation","🎓 Graduation"],["signoff","✅ Mentorship Sign-off"]].map(([v,l]) => (
+                  ["milestone","🏆 Milestone"],["graduation","🎓 Graduation"]].map(([v,l]) => (
                   <SelectItem key={v} value={v}>{l}</SelectItem>
                 ))}
               </SelectContent>
