@@ -110,6 +110,13 @@ export default function LandingPage() {
                 Sign In
               </Link>
             </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
+              className="flex items-center gap-3 mt-8 opacity-60">
+              <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={100} height={30} className="h-7 w-auto object-contain brightness-0 invert" />
+              <div className="w-px h-5 bg-white/30" />
+              <Image src="/uds-logo.png" alt="Uganda Digital Society" width={80} height={30} className="h-7 w-auto object-contain brightness-0 invert" />
+            </motion.div>
           </div>
 
           {/* Right — image card */}
