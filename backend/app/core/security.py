@@ -1,3 +1,4 @@
+from __future__ import annotations
 import bcrypt
 from datetime import datetime, timedelta, timezone
 from jose import jwt
