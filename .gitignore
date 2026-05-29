@@ -1,0 +1,23 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/nexus.db
+backend/uploads/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/.turbo/
+
+# Env files with secrets
+backend/.env
+frontend/.env.local
+
+# Keep the production env template
+!frontend/.env.production
+
+# OS
+.DS_Store
+Thumbs.db
