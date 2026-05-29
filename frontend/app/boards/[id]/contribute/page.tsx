@@ -242,9 +242,6 @@ export default function ContributePage() {
                         Your appreciation has been added to the board for{" "}
                         <span className="font-semibold" style={{ color: "#173962" }}>{recipient}</span>.
                       </p>
-                      <p className="text-xs font-heading font-semibold mb-8" style={{ color: "#16a34a" }}>
-                        Successfully contributed
-                      </p>
                       <button onClick={() => setSubmitted(false)}
                         className="btn-primary text-sm w-full justify-center">
                         Add Another Message
