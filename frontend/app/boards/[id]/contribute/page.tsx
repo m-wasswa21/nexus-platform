@@ -140,12 +140,6 @@ export default function ContributePage() {
               <span className="text-[11px] font-heading font-bold uppercase tracking-[0.18em] text-white/90">{meta.label} Board</span>
             </motion.div>
 
-            {/* Emoji */}
-            <motion.p variants={fadeUp} className="text-7xl md:text-8xl mb-5 select-none leading-none"
-              style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.15))" }}>
-              {meta.emoji}
-            </motion.p>
-
             {/* Title */}
             <motion.h1 variants={fadeUp}
               className="font-heading text-3xl md:text-5xl font-black leading-tight text-white mb-3"
