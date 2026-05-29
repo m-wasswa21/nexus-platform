@@ -19,7 +19,7 @@ const BOARD_COLOR: Record<string, string> = {
 };
 const BOARD_EMOJI: Record<string, string> = {
   appreciation: "🙏", birthday: "🎂", farewell: "👋",
-  milestone: "🏆", graduation: "🎓", signoff: "✅",
+  milestone: "🏆", graduation: "🎓", signoff: "🌟",
 };
 
 /* ── Shared page container — same padding on every section ────── */

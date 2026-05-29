@@ -33,7 +33,7 @@ const THEMES = [
 
 const BOARD_EMOJIS: Record<string, string> = {
   appreciation: "🙏", birthday: "🎂", farewell: "👋",
-  milestone: "🏆", graduation: "🎓", signoff: "✅",
+  milestone: "🏆", graduation: "🎓", signoff: "🌟",
 };
 
 const schema = z.object({

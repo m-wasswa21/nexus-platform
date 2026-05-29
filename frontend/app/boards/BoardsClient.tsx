@@ -14,7 +14,7 @@ const BOARD_META: Record<string, { emoji: string; color: string; label: string }
   farewell:     { emoji: "👋", color: "#f97316", label: "Farewell" },
   milestone:    { emoji: "🏆", color: "#8b5cf6", label: "Milestone" },
   graduation:   { emoji: "🎓", color: "#2563eb", label: "Graduation" },
-  signoff:      { emoji: "✅", color: "#c9a34b", label: "Sign-off" },
+  signoff:      { emoji: "🌟", color: "#c9a34b", label: "Sign-off" },
 };
 
 export default function BoardsClient() {

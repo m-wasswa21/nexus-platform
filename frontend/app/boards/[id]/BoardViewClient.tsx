@@ -21,7 +21,7 @@ const Confetti = dynamic(() => import("react-confetti"), { ssr: false });
 
 const BOARD_EMOJIS: Record<string, string> = {
   appreciation: "🙏", birthday: "🎂", farewell: "👋",
-  milestone: "🏆", graduation: "🎓", signoff: "✅",
+  milestone: "🏆", graduation: "🎓", signoff: "🌟",
 };
 
 export default function BoardViewClient() {
