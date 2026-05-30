@@ -12,7 +12,7 @@ import dynamic from "next/dynamic";
 import PostCard from "@/components/boards/PostCard";
 import AddPostForm from "@/components/boards/AddPostForm";
 import DiceBearAvatar from "@/components/ui/DiceBearAvatar";
-import { Users2, MessageSquare, Eye, ArrowRight, CalendarDays, BookOpen, X } from "lucide-react";
+import { Users2, MessageSquare, Eye, ArrowRight, CalendarDays, BookOpen, X, ExternalLink, Newspaper } from "lucide-react";
 
 const Confetti = dynamic(() => import("react-confetti"), { ssr: false });
 
@@ -206,7 +206,7 @@ export default function ContributePage() {
           </motion.div>
 
           {/* Quick-access buttons */}
-          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mt-5">
+          <motion.div variants={fadeUp} className="flex flex-wrap items-center justify-center gap-3 mt-5">
             <button onClick={() => setShowProgramme(true)}
               className="flex items-center gap-2 px-5 py-2.5 rounded-full font-heading font-semibold text-xs transition-all hover:scale-105 active:scale-95 backdrop-blur-sm"
               style={{ backgroundColor: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "white" }}>
@@ -219,10 +219,48 @@ export default function ContributePage() {
               <BookOpen className="w-3.5 h-3.5" style={{ color: "#c9a34b" }} />
               About John
             </button>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaqABscLxslw1h2aJJ35bh-jatwPiVh5L7ekDYOoyB8noALw/viewform"
+              target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-heading font-bold text-xs transition-all hover:scale-105 active:scale-95"
+              style={{ background: "linear-gradient(135deg, #c9a34b, #e8c76a)", color: "#0a1628" }}>
+              <ArrowRight className="w-3.5 h-3.5" />
+              Register Now
+            </a>
           </motion.div>
         </div>
 
       </div>
+
+      {/* ── In the Press ── */}
+      <section className="py-10 px-5 border-b border-slate-100" style={{ backgroundColor: "#f8faff" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 mb-5">
+            <Newspaper className="w-4 h-4" style={{ color: "#c9a34b" }} />
+            <p className="text-[11px] font-heading font-bold uppercase tracking-[0.2em]" style={{ color: "#173962" }}>In the Press</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[
+              { outlet: "CEO.co.ug",          headline: "Uganda Digital Society launches inaugural John Babirukamu Annual Memorial Lecture", url: "https://www.ceo.co.ug/uganda-digital-society-launches-inaugural-john-babirukamu-annual-memorial-lecture/" },
+              { outlet: "BusinessFocus.co.ug", headline: "Uganda Digital Society announces inaugural John Babirukamu Annual Memorial Lecture", url: "https://businessfocus.co.ug/uganda-digital-society-announces-inaugural-john-babirukamu-annual-memorial-lecture/" },
+              { outlet: "SoftPower.ug",        headline: "Uganda Digital Society announces first John Babirukamu Annual Memorial Lecture",     url: "https://softpower.ug/uganda-digital-society-announces-first-john-babirukamu-annual-memorial-lecture/" },
+              { outlet: "TowerPost.com",       headline: "First John Babirukamu Annual Memorial Lecture to take place tomorrow",              url: "https://thetowerpost.com/2026/05/29/first-john-babirukamu-annual-memorial-lecture-to-take-place-tomorrow/" },
+              { outlet: "LinkedIn",            headline: "John Ssenkeezi — 'John Birungi Babirukamu MCIM was the kind…'",                    url: "https://www.linkedin.com/posts/johnssenkeezi_john-birungi-babirukamu-mcim-was-the-kind-share-7463597742196457472-NdHB" },
+            ].map(({ outlet, headline, url }) => (
+              <a key={outlet} href={url} target="_blank" rel="noopener noreferrer"
+                className="flex flex-col justify-between gap-3 p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all group">
+                <div>
+                  <p className="text-[10px] font-heading font-bold uppercase tracking-widest mb-1.5" style={{ color: "#c9a34b" }}>{outlet}</p>
+                  <p className="text-xs font-heading font-semibold leading-snug line-clamp-3" style={{ color: "#173962" }}>{headline}</p>
+                </div>
+                <div className="flex items-center gap-1 text-slate-400 group-hover:text-slate-600 transition-colors">
+                  <ExternalLink className="w-3 h-3" />
+                  <span className="text-[10px] font-heading font-semibold">Read article</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── Body ── */}
       <div className="max-w-6xl mx-auto px-5 py-10">
