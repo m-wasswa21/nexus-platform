@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Handshake, PartyPopper, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Handshake, PartyPopper, Users, Calendar, Clock, MapPin } from "lucide-react";
 
 const stats = [
   { value: "113+", label: "Community Members" },
@@ -21,7 +21,7 @@ const compare = [
   { name: "Kudoboard",    board: true,  mentor: false },
   { name: "MentorCruise", board: false, mentor: true },
   { name: "LinkedIn",     board: false, mentor: false },
-  { name: "Nexus ✦",      board: true,  mentor: true, highlight: true },
+  { name: "This Platform ✦", board: true, mentor: true, highlight: true },
 ];
 
 export default function LandingPage() {
@@ -37,7 +37,7 @@ export default function LandingPage() {
             <Image src="/uds-logo.png" alt="Uganda Digital Society" width={110} height={44} className="h-9 w-auto object-contain" />
           </Link>
           <div className="hidden md:flex items-center gap-1">
-            {["Features", "Compare", "Community"].map((item) => (
+            {["Features", "Community"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`}
                 className="px-4 py-2 rounded-full text-sm font-semibold font-heading transition-all duration-200 text-navy/60 hover:text-navy hover:bg-navy/5">
                 {item}
@@ -58,7 +58,6 @@ export default function LandingPage() {
 
       {/* ── HERO ───────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden min-h-[88vh] flex items-center" style={{ background: "linear-gradient(135deg, #0a1628 0%, #173962 60%, #1e4a7c 100%)" }}>
-        {/* Background image with overlay */}
         <div className="absolute inset-0">
           <Image
             src="/conclave.jpg"
@@ -71,12 +70,10 @@ export default function LandingPage() {
           <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(10,22,40,0.92) 0%, rgba(23,57,98,0.85) 55%, rgba(30,74,124,0.75) 100%)" }} />
         </div>
 
-        {/* Gold dot accent */}
         <div className="absolute inset-0 pattern-dots" />
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full opacity-10 blur-3xl" style={{ background: "radial-gradient(circle, #c9a34b, transparent)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 py-32 w-full grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left — text */}
           <div>
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 backdrop-blur-sm"
@@ -95,7 +92,7 @@ export default function LandingPage() {
 
             <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
               className="text-xl md:text-2xl mb-10 max-w-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Nexus combines professional mentorship matching with group appreciation boards —
+              Professional mentorship matching and group appreciation boards —
               the community platform built for Africa&#39;s CIO/CxO leaders.
             </motion.p>
 
@@ -119,7 +116,6 @@ export default function LandingPage() {
             </motion.div>
           </div>
 
-          {/* Right — image card */}
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.9, delay: 0.3 }}
             className="hidden lg:block">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl" style={{ border: "2px solid rgba(201,163,75,0.3)" }}>
@@ -131,9 +127,7 @@ export default function LandingPage() {
                 className="object-cover w-full h-[420px]"
                 quality={90}
               />
-              {/* Gold overlay gradient at bottom */}
               <div className="absolute inset-x-0 bottom-0 h-32" style={{ background: "linear-gradient(to top, rgba(10,22,40,0.8), transparent)" }} />
-              {/* Floating stat badge */}
               <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                 {[
                   { value: "113+", label: "Members" },
@@ -147,6 +141,86 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── JB MEMORIAL LECTURE ────────────────────────────────────── */}
+      <section className="py-12 px-6" style={{ backgroundColor: "#f8faff" }}>
+        <div className="max-w-6xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="rounded-3xl overflow-hidden shadow-2xl"
+            style={{ background: "linear-gradient(135deg, #0a1628 0%, #173962 60%, #1e4a7c 100%)", border: "1px solid rgba(201,163,75,0.25)" }}>
+            <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none" />
+            <div className="relative grid lg:grid-cols-[1fr_auto] gap-0 items-stretch">
+
+              {/* Left — content */}
+              <div className="p-8 md:p-12">
+                {/* Live badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+                  style={{ backgroundColor: "rgba(201,163,75,0.15)", border: "1px solid rgba(201,163,75,0.35)" }}>
+                  <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#c9a34b" }} />
+                  <span className="text-[11px] font-heading font-bold tracking-[0.18em] uppercase" style={{ color: "#c9a34b" }}>
+                    Featured Event
+                  </span>
+                </div>
+
+                {/* Logos */}
+                <div className="flex items-center gap-3 mb-5 opacity-70">
+                  <Image src="/uds-logo.png" alt="Uganda Digital Society" width={80} height={28} className="h-6 w-auto object-contain brightness-0 invert" />
+                  <div className="w-px h-4 bg-white/30" />
+                  <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={80} height={28} className="h-5 w-auto object-contain brightness-0 invert" />
+                </div>
+
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-3">
+                  1<sup className="text-lg">st</sup> John Babirukamu<br />
+                  <span style={{ color: "#c9a34b" }}>Annual Memorial Lecture</span>
+                </h2>
+
+                <p className="text-base md:text-lg mb-6 max-w-xl" style={{ color: "rgba(255,255,255,0.65)" }}>
+                  <span className="font-semibold text-white">Theme: </span>
+                  Creating Digital Leaders Through Mentorship and Knowledge Sharing
+                </p>
+
+                {/* Event details */}
+                <div className="flex flex-wrap gap-4 mb-8">
+                  {[
+                    { icon: Calendar, text: "Saturday, 30th May 2026" },
+                    { icon: Clock,    text: "10:00 AM – 12:00 PM" },
+                    { icon: MapPin,   text: "National ICT Hub" },
+                  ].map(({ icon: Icon, text }) => (
+                    <div key={text} className="flex items-center gap-2 px-3 py-2 rounded-xl"
+                      style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}>
+                      <Icon className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
+                      <span className="text-sm font-heading font-semibold text-white">{text}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <Link
+                  href="https://jbannualmemoriallecture.org/boards/4/contribute"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  style={{ background: "linear-gradient(135deg, #c9a34b, #e8c76a)", color: "#0a1628" }}>
+                  Leave a Message on the Board <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              {/* Right — decorative accent */}
+              <div className="hidden lg:flex items-center justify-center p-12 pr-14">
+                <div className="text-center">
+                  <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl"
+                    style={{ background: "linear-gradient(135deg, rgba(201,163,75,0.2), rgba(201,163,75,0.05))", border: "2px solid rgba(201,163,75,0.3)" }}>
+                    <Image src="/uds-logo.png" alt="Uganda Digital Society" width={72} height={72} className="w-16 h-16 object-contain brightness-0 invert opacity-80" />
+                  </div>
+                  <p className="text-[11px] font-heading font-bold uppercase tracking-[0.2em] text-white/40">In Memoriam</p>
+                  <p className="text-base font-heading font-black text-white/80 mt-1">John Babirukamu</p>
+                </div>
+              </div>
+
             </div>
           </motion.div>
         </div>
@@ -172,7 +246,7 @@ export default function LandingPage() {
             <span className="tag mb-4 inline-block">Platform Features</span>
             <h2 className="section-title mb-4">Everything in One Place</h2>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              No more juggling Kudoboard, MentorCruise, and LinkedIn separately.
+              No more juggling separate tools for mentorship, celebrations, and community.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -193,9 +267,9 @@ export default function LandingPage() {
       </section>
 
       {/* ── COMPARE ────────────────────────────────────────────────── */}
-      <section id="compare" className="py-24" style={{ backgroundColor: "#f8faff" }}>
+      <section className="py-24" style={{ backgroundColor: "#f8faff" }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="tag mb-4 inline-block">Why Nexus?</span>
+          <span className="tag mb-4 inline-block">Why This Platform?</span>
           <h2 className="section-title mb-12">One Platform. Everything.</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {compare.map(({ name, board, mentor, highlight }, i) => (
@@ -226,7 +300,7 @@ export default function LandingPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="tag mb-6 inline-block">Join Today</span>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
-              Ready to join Africa's<br />
+              Ready to join Africa&#39;s<br />
               <span className="text-gradient-gold">top digital leaders?</span>
             </h2>
             <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
@@ -248,7 +322,7 @@ export default function LandingPage() {
             <Image src="/uds-logo.png" alt="Uganda Digital Society" width={90} height={36} className="h-8 w-auto object-contain brightness-0 invert opacity-70" />
           </div>
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-            © 2026 Nexus — CIO/CxO Africa &amp; Uganda Digital Society
+            © 2026 CIO/CxO Africa &amp; Uganda Digital Society
           </p>
           <div className="flex items-center gap-4">
             <Link href="/login" className="text-sm font-heading font-semibold hover:text-white transition-colors" style={{ color: "rgba(255,255,255,0.5)" }}>Sign In</Link>

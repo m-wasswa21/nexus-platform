@@ -55,7 +55,7 @@ export default function LoginPage() {
             <div className="w-px h-7 bg-white/20" />
             <Image src="/uds-logo.png" alt="Uganda Digital Society" width={110} height={44} className="h-9 w-auto object-contain brightness-0 invert" />
           </Link>
-          <p className="text-xs font-heading font-bold tracking-widest uppercase mt-3" style={{ color: "#c9a34b" }}>Nexus Platform</p>
+          <p className="text-xs font-heading font-bold tracking-widest uppercase mt-3" style={{ color: "#c9a34b" }}>Digital Leadership Platform</p>
         </div>
 
         <div className="relative z-10">
@@ -70,7 +70,7 @@ export default function LoginPage() {
         </div>
 
         <p className="relative z-10 text-sm" style={{ color: "rgba(255,255,255,0.3)" }}>
-          © 2026 Nexus — CIO/CxO Africa &amp; Uganda Digital Society
+          © 2026 CIO/CxO Africa &amp; Uganda Digital Society
         </p>
       </div>
 

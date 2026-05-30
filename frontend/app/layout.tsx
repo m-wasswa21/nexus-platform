@@ -6,8 +6,9 @@ import Providers from "./providers";
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Nexus — CIO/CxO Africa Digital Leadership Forum",
+  title: "CIO/CxO Africa · Uganda Digital Society",
   description: "Mentorship & Appreciation Platform for Africa's digital leaders",
+  icons: { icon: "/uds-logo.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

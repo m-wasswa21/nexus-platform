@@ -58,7 +58,7 @@ export default function DashboardClient() {
         <div className="flex items-center justify-between gap-6">
           <div>
             <p className="text-[11px] font-heading font-bold tracking-[0.18em] uppercase mb-2"
-              style={{ color: "#c9a34b" }}>CIO/CxO Africa · Uganda Digital Society · Nexus</p>
+              style={{ color: "#c9a34b" }}>CIO/CxO Africa · Uganda Digital Society</p>
             <h1 className="font-heading text-[28px] font-black leading-tight" style={{ color: "#173962" }}>
               Good day, {user?.name?.split(" ")[0]} 👋
             </h1>
