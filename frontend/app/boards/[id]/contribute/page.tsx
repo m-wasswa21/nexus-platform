@@ -39,6 +39,15 @@ export default function ContributePage() {
   const [confettiSize, setConfettiSize] = useState({ w: 0, h: 0 });
   const [showProgramme, setShowProgramme] = useState(false);
   const [showTribute, setShowTribute] = useState(false);
+  const [pressModal, setPressModal] = useState<{ outlet: string; headline: string; url: string } | null>(null);
+
+  const PRESS = [
+    { outlet: "CEO.co.ug",           headline: "Uganda Digital Society launches inaugural John Babirukamu Annual Memorial Lecture",  url: "https://www.ceo.co.ug/uganda-digital-society-launches-inaugural-john-babirukamu-annual-memorial-lecture/" },
+    { outlet: "BusinessFocus.co.ug", headline: "Uganda Digital Society announces inaugural John Babirukamu Annual Memorial Lecture", url: "https://businessfocus.co.ug/uganda-digital-society-announces-inaugural-john-babirukamu-annual-memorial-lecture/" },
+    { outlet: "SoftPower.ug",        headline: "Uganda Digital Society announces first John Babirukamu Annual Memorial Lecture",     url: "https://softpower.ug/uganda-digital-society-announces-first-john-babirukamu-annual-memorial-lecture/" },
+    { outlet: "TowerPost.com",       headline: "First John Babirukamu Annual Memorial Lecture to take place tomorrow",              url: "https://thetowerpost.com/2026/05/29/first-john-babirukamu-annual-memorial-lecture-to-take-place-tomorrow/" },
+    { outlet: "LinkedIn",            headline: "John Ssenkeezi — 'John Birungi Babirukamu MCIM was the kind…'",                    url: "https://www.linkedin.com/posts/johnssenkeezi_john-birungi-babirukamu-mcim-was-the-kind-share-7463597742196457472-NdHB" },
+  ];
 
   const sessionKey = `board_viewed_${id}`;
 
@@ -231,37 +240,6 @@ export default function ContributePage() {
 
       </div>
 
-      {/* ── In the Press ── */}
-      <section className="py-10 px-5 border-b border-slate-100" style={{ backgroundColor: "#f8faff" }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="flex items-center gap-2 mb-5">
-            <Newspaper className="w-4 h-4" style={{ color: "#c9a34b" }} />
-            <p className="text-[11px] font-heading font-bold uppercase tracking-[0.2em]" style={{ color: "#173962" }}>In the Press</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {[
-              { outlet: "CEO.co.ug",          headline: "Uganda Digital Society launches inaugural John Babirukamu Annual Memorial Lecture", url: "https://www.ceo.co.ug/uganda-digital-society-launches-inaugural-john-babirukamu-annual-memorial-lecture/" },
-              { outlet: "BusinessFocus.co.ug", headline: "Uganda Digital Society announces inaugural John Babirukamu Annual Memorial Lecture", url: "https://businessfocus.co.ug/uganda-digital-society-announces-inaugural-john-babirukamu-annual-memorial-lecture/" },
-              { outlet: "SoftPower.ug",        headline: "Uganda Digital Society announces first John Babirukamu Annual Memorial Lecture",     url: "https://softpower.ug/uganda-digital-society-announces-first-john-babirukamu-annual-memorial-lecture/" },
-              { outlet: "TowerPost.com",       headline: "First John Babirukamu Annual Memorial Lecture to take place tomorrow",              url: "https://thetowerpost.com/2026/05/29/first-john-babirukamu-annual-memorial-lecture-to-take-place-tomorrow/" },
-              { outlet: "LinkedIn",            headline: "John Ssenkeezi — 'John Birungi Babirukamu MCIM was the kind…'",                    url: "https://www.linkedin.com/posts/johnssenkeezi_john-birungi-babirukamu-mcim-was-the-kind-share-7463597742196457472-NdHB" },
-            ].map(({ outlet, headline, url }) => (
-              <a key={outlet} href={url} target="_blank" rel="noopener noreferrer"
-                className="flex flex-col justify-between gap-3 p-4 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all group">
-                <div>
-                  <p className="text-[10px] font-heading font-bold uppercase tracking-widest mb-1.5" style={{ color: "#c9a34b" }}>{outlet}</p>
-                  <p className="text-xs font-heading font-semibold leading-snug line-clamp-3" style={{ color: "#173962" }}>{headline}</p>
-                </div>
-                <div className="flex items-center gap-1 text-slate-400 group-hover:text-slate-600 transition-colors">
-                  <ExternalLink className="w-3 h-3" />
-                  <span className="text-[10px] font-heading font-semibold">Read article</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Body ── */}
       <div className="max-w-6xl mx-auto px-5 py-10">
         <div className="grid lg:grid-cols-[420px_1fr] gap-8 items-start">
@@ -393,6 +371,26 @@ export default function ContributePage() {
         </div>
       </div>
 
+      {/* ── In the Press ── */}
+      <section className="py-10 px-5 border-t border-slate-100" style={{ backgroundColor: "#f8faff" }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex items-center gap-2 mb-5">
+            <Newspaper className="w-4 h-4" style={{ color: "#c9a34b" }} />
+            <p className="text-[11px] font-heading font-bold uppercase tracking-[0.2em]" style={{ color: "#173962" }}>In the Press</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {PRESS.map((item) => (
+              <button key={item.outlet} onClick={() => setPressModal(item)}
+                className="flex items-center gap-2 px-5 py-2.5 rounded-full font-heading font-semibold text-xs transition-all hover:scale-105 active:scale-95 hover:shadow-md"
+                style={{ backgroundColor: "white", border: "1.5px solid rgba(23,57,98,0.15)", color: "#173962" }}>
+                <Newspaper className="w-3.5 h-3.5 shrink-0" style={{ color: "#c9a34b" }} />
+                {item.outlet}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Programme Modal ── */}
       <AnimatePresence>
         {showProgramme && (
@@ -484,6 +482,45 @@ export default function ContributePage() {
                 <div className="pt-5 border-t border-slate-100 text-center text-sm text-slate-500 italic">
                   In remembering John Babirukamu, we are not only looking back — we are reaffirming the standards, values, and vision he left behind.
                 </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Press Article Modal ── */}
+      <AnimatePresence>
+        {pressModal && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ backgroundColor: "rgba(10,22,40,0.7)", backdropFilter: "blur(4px)" }}
+            onClick={() => setPressModal(null)}>
+            <motion.div initial={{ opacity: 0, scale: 0.95, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 16 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-md rounded-3xl overflow-hidden shadow-2xl bg-white"
+              onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="flex items-start justify-between px-6 py-5" style={{ background: "linear-gradient(135deg, #0a1628, #173962)" }}>
+                <div>
+                  <p className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] mb-1" style={{ color: "#c9a34b" }}>In the Press</p>
+                  <p className="text-white font-heading font-black text-base">{pressModal.outlet}</p>
+                </div>
+                <button onClick={() => setPressModal(null)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all shrink-0">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              {/* Content */}
+              <div className="px-6 py-6">
+                <p className="font-heading font-bold text-base leading-snug mb-6" style={{ color: "#173962" }}>
+                  {pressModal.headline}
+                </p>
+                <a href={pressModal.url} target="_blank" rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-heading font-bold text-sm transition-all hover:scale-[1.02]"
+                  style={{ background: "linear-gradient(135deg, #173962, #1e4a7c)", color: "white" }}>
+                  <ExternalLink className="w-4 h-4" />
+                  Read Full Article
+                </a>
               </div>
             </motion.div>
           </motion.div>
