@@ -12,7 +12,7 @@ import dynamic from "next/dynamic";
 import PostCard from "@/components/boards/PostCard";
 import AddPostForm from "@/components/boards/AddPostForm";
 import DiceBearAvatar from "@/components/ui/DiceBearAvatar";
-import { Users2, MessageSquare, Eye, ArrowRight } from "lucide-react";
+import { Users2, MessageSquare, Eye, ArrowRight, CalendarDays, BookOpen, X } from "lucide-react";
 
 const Confetti = dynamic(() => import("react-confetti"), { ssr: false });
 
@@ -37,6 +37,8 @@ export default function ContributePage() {
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiSize, setConfettiSize] = useState({ w: 0, h: 0 });
+  const [showProgramme, setShowProgramme] = useState(false);
+  const [showTribute, setShowTribute] = useState(false);
 
   const sessionKey = `board_viewed_${id}`;
 
@@ -206,62 +208,6 @@ export default function ContributePage() {
 
       </div>
 
-      {/* ── Tribute ── */}
-      <section className="py-16 px-6 bg-white border-b border-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            {/* Header */}
-            <div className="text-center mb-10">
-              <p className="text-[11px] font-heading font-bold uppercase tracking-[0.22em] mb-3" style={{ color: "#c9a34b" }}>In Memoriam</p>
-              <h2 className="font-heading text-3xl md:text-4xl font-black mb-2" style={{ color: "#173962" }}>Honoring John Babirukamu</h2>
-              <p className="text-lg text-slate-500 font-body">A Legacy That Redefined Uganda&apos;s Digital Landscape</p>
-            </div>
-
-            {/* Pull quote */}
-            <div className="rounded-2xl p-6 mb-10 text-center"
-              style={{ background: "linear-gradient(135deg, #0a1628, #173962)", border: "1px solid rgba(201,163,75,0.2)" }}>
-              <p className="text-lg md:text-xl font-heading font-semibold text-white leading-relaxed">
-                &ldquo;Some contributions are visible in campaigns, platforms, and institutions, others are deeper, embedded in the systems, standards, and thinking that continue to shape an entire industry long after their originators are gone. John Birungi Babirukamu belongs to the latter.&rdquo;
-              </p>
-            </div>
-
-            {/* Body text */}
-            <div className="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed text-[15px]">
-              <p>As Uganda reflects on his life and legacy, it becomes increasingly clear that his influence extends far beyond the roles he held or the organizations he served. He was not merely a participant in the rise of digital communication in Uganda — he was one of its key architects. At a time when the digital space was still being defined, John brought structure to uncertainty, discipline to experimentation, and strategy to a field still finding its professional identity.</p>
-              <p>He saw digital communication not as a supplementary tool, but as a core business function — one that required systems thinking, governance, and measurable impact. In doing so, he helped transform digital marketing in Uganda from an emerging practice into a credible, data-driven discipline.</p>
-              <p>With over 14 years of experience as a certified Management Information Systems expert and strategist, John operated at the intersection of technology, communication, and institutional transformation. His work reshaped how organizations, media houses, and brands understood and engaged with digital platforms.</p>
-              <p>A defining chapter of his career was at <strong className="text-navy font-semibold">Next Media Services</strong>, where he served as Head of Digital Marketing for over five years. He led the development of the company&apos;s first digital marketing strategy, established its foundational social media governance framework, and rebuilt its digital ecosystem from the ground up. Under his leadership, Next Media&apos;s digital transformation became a national benchmark — introducing interactive platforms for NBS TV, live streaming infrastructure, and early video streaming applications that redefined how Uganda consumed news and content.</p>
-              <p>John later transitioned to <strong className="text-navy font-semibold">Metropolitan Republic</strong>, where he strengthened the link between storytelling and performance, ensuring creativity was supported by data, insight, and measurable outcomes. His journey then led to <strong className="text-navy font-semibold">MTN Uganda</strong>, where he served as Digital Communications Manager during a critical phase of the company&apos;s digital expansion, strengthening corporate communications in a rapidly evolving telecommunications landscape.</p>
-              <p>Beyond these roles, John contributed his expertise to QG Group, NTV Uganda, Uganda Breweries Limited, Equity Bank, BRAC, and Sheraton Kampala — consistently championing a discipline grounded in systems thinking, governance, information security, and data integrity.</p>
-              <p>As <strong className="text-navy font-semibold">General Manager at Hedge Marketing</strong>, his leadership reached its most transformative phase. He turned a small agency into a strong mid-sized competitor, delivering an extraordinary 600 percent growth in revenue and expanding capacity to manage complex multinational accounts including Prudential Africa PLC, Uganda Baati, Opportunity Bank, EFC Bank, Housing Finance Bank, and AAR Insurance.</p>
-              <p>His professional development included ISO certifications and an Executive MBA from the University of Suffolk. He was a member of the Chartered Institute of Marketing UK, the Uganda Marketers&apos; Society, and a <strong className="text-navy font-semibold">founding Vice President of the Uganda Digital Society</strong> — where he played a pivotal role in shaping industry standards and community development.</p>
-              <p>Yet beyond strategy and systems, those who worked with John remember something even more enduring — his humanity. He was a mentor who invested deeply in others, a leader who gave generously of his time, and a steady presence in a fast-moving industry. His commitment to developing the next generation of digital professionals remains one of his most meaningful contributions.</p>
-
-              {/* Closing invitation */}
-              <div className="mt-8 pt-6 border-t border-slate-200 text-center">
-                <p className="text-slate-700 text-base mb-4">
-                  To honor his legacy is to continue the work he began — building systems that last, sharing knowledge that empowers, and raising a generation that leads with both competence and integrity.
-                </p>
-                <p className="text-slate-600 text-sm mb-4 italic">
-                  In recognition of his enduring impact, the Uganda Digital Society invites colleagues, partners, and professionals whose lives and careers were shaped by his work to the Annual John Babirukamu Memorial Lecture, themed:
-                </p>
-                <p className="font-heading font-black text-lg mb-5" style={{ color: "#173962" }}>
-                  &ldquo;Creating Digital Leaders through Mentorship and Knowledge Sharing&rdquo;
-                </p>
-                <div className="flex flex-wrap justify-center gap-5 text-sm text-slate-500 mb-6">
-                  <span>📍 UICT Innovation Hub, Nakawa</span>
-                  <span>📅 Saturday, May 30th</span>
-                  <span>⏰ 10:00 AM – 12:00 Noon</span>
-                </div>
-                <p className="text-slate-500 text-sm italic">
-                  In remembering John Babirukamu, we are not only looking back — we are reaffirming the standards, values, and vision he left behind.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── Body ── */}
       <div className="max-w-6xl mx-auto px-5 py-10">
         <div className="grid lg:grid-cols-[420px_1fr] gap-8 items-start">
@@ -343,32 +289,20 @@ export default function ContributePage() {
               <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity" />
             </div>
 
-            {/* Running Order */}
-            <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <div className="px-5 py-4" style={{ background: "linear-gradient(135deg, #0a1628, #173962)" }}>
-                <p className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#c9a34b" }}>Programme</p>
-                <p className="text-white font-heading font-black text-sm">Running Order</p>
-                <p className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>30 May 2026 · 09:30 – 12:00 · ICT Innovation Hub</p>
-              </div>
-              <div className="divide-y divide-slate-100">
-                {[
-                  { time: "09:30 – 10:00", activity: "Arrival & SOPs",                                        person: "All" },
-                  { time: "10:00 – 10:10", activity: "Welcome remarks & the industry side of John",           person: "John Ssenkeezi, President – Uganda Digital Society" },
-                  { time: "10:10 – 10:20", activity: "Remembering John as a son and brother",                 person: "Family representative" },
-                  { time: "10:20 – 11:00", activity: "Keynote: Creating digital leaders through mentorship and knowledge sharing", person: "Collin Babirukamu, ED IT – Bank of Uganda · Chairperson Advisory Board, CIO Forum" },
-                  { time: "11:00 – 11:15", activity: "Mental wellness: building healthy, grounded leadership", person: "Dr. Grace Bikumbi – MindLyfe" },
-                  { time: "11:15 – 11:30", activity: "About the John Babirukamu Mentorship Programme",        person: "Patricia Kahill, Director Education & Training – Uganda Digital Society" },
-                  { time: "11:30 – 11:35", activity: "Remarks by the CIO Forum",                              person: "Jonathan Kayemba, Chairperson Board of Governors" },
-                  { time: "11:35 – 11:45", activity: "Audience reactions or comments",                        person: "Facilitated by the Emcee" },
-                  { time: "11:45 – 12:00", activity: "Closing remarks",                                       person: "Joan Generous Asaba, Vice President – Uganda Digital Society" },
-                ].map(({ time, activity, person }) => (
-                  <div key={time} className="px-5 py-3 hover:bg-slate-50 transition-colors">
-                    <p className="text-[10px] font-heading font-bold tabular-nums mb-0.5" style={{ color: "#c9a34b" }}>{time}</p>
-                    <p className="text-xs font-heading font-semibold leading-snug mb-0.5" style={{ color: "#173962" }}>{activity}</p>
-                    <p className="text-[11px] text-slate-400 leading-snug">{person}</p>
-                  </div>
-                ))}
-              </div>
+            {/* Quick-access buttons */}
+            <div className="grid grid-cols-2 gap-3">
+              <button onClick={() => setShowProgramme(true)}
+                className="flex items-center gap-2 px-4 py-3 rounded-xl border-2 font-heading font-semibold text-xs transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                style={{ borderColor: "rgba(23,57,98,0.15)", color: "#173962", backgroundColor: "rgba(23,57,98,0.04)" }}>
+                <CalendarDays className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
+                View Programme
+              </button>
+              <button onClick={() => setShowTribute(true)}
+                className="flex items-center gap-2 px-4 py-3 rounded-xl border-2 font-heading font-semibold text-xs transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                style={{ borderColor: "rgba(23,57,98,0.15)", color: "#173962", backgroundColor: "rgba(23,57,98,0.04)" }}>
+                <BookOpen className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
+                About John
+              </button>
             </div>
           </div>
 
@@ -419,6 +353,103 @@ export default function ContributePage() {
 
         </div>
       </div>
+
+      {/* ── Programme Modal ── */}
+      <AnimatePresence>
+        {showProgramme && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ backgroundColor: "rgba(10,22,40,0.7)", backdropFilter: "blur(4px)" }}
+            onClick={() => setShowProgramme(false)}>
+            <motion.div initial={{ opacity: 0, scale: 0.95, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 16 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl"
+              onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="flex items-start justify-between px-6 py-5 sticky top-0" style={{ background: "linear-gradient(135deg, #0a1628, #173962)" }}>
+                <div>
+                  <p className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#c9a34b" }}>Programme</p>
+                  <p className="text-white font-heading font-black text-base">Running Order</p>
+                  <p className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>30 May 2026 · 09:30 – 12:00 · ICT Innovation Hub</p>
+                </div>
+                <button onClick={() => setShowProgramme(false)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 transition-all shrink-0 mt-0.5">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              {/* Rows */}
+              <div className="bg-white divide-y divide-slate-100">
+                {[
+                  { time: "09:30 – 10:00", activity: "Arrival & SOPs",                                                              person: "All" },
+                  { time: "10:00 – 10:10", activity: "Welcome remarks & the industry side of John",                                 person: "John Ssenkeezi, President – Uganda Digital Society" },
+                  { time: "10:10 – 10:20", activity: "Remembering John as a son and brother",                                       person: "Family representative" },
+                  { time: "10:20 – 11:00", activity: "Keynote: Creating digital leaders through mentorship and knowledge sharing",   person: "Collin Babirukamu, ED IT – Bank of Uganda · Chairperson Advisory Board, CIO Forum" },
+                  { time: "11:00 – 11:15", activity: "Mental wellness: building healthy, grounded leadership in demanding careers",  person: "Dr. Grace Bikumbi – MindLyfe" },
+                  { time: "11:15 – 11:30", activity: "About the John Babirukamu Mentorship Programme",                              person: "Patricia Kahill, Director Education & Training – Uganda Digital Society" },
+                  { time: "11:30 – 11:35", activity: "Remarks by the CIO Forum",                                                    person: "Jonathan Kayemba, Chairperson Board of Governors" },
+                  { time: "11:35 – 11:45", activity: "Audience reactions or comments",                                              person: "Facilitated by the Emcee" },
+                  { time: "11:45 – 12:00", activity: "Closing remarks",                                                             person: "Joan Generous Asaba, Vice President – Uganda Digital Society" },
+                ].map(({ time, activity, person }) => (
+                  <div key={time} className="px-6 py-3.5 hover:bg-slate-50 transition-colors">
+                    <p className="text-[10px] font-heading font-bold tabular-nums mb-0.5" style={{ color: "#c9a34b" }}>{time}</p>
+                    <p className="text-sm font-heading font-semibold leading-snug mb-0.5" style={{ color: "#173962" }}>{activity}</p>
+                    <p className="text-xs text-slate-400 leading-snug">{person}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── Tribute Modal ── */}
+      <AnimatePresence>
+        {showTribute && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            style={{ backgroundColor: "rgba(10,22,40,0.7)", backdropFilter: "blur(4px)" }}
+            onClick={() => setShowTribute(false)}>
+            <motion.div initial={{ opacity: 0, scale: 0.95, y: 16 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 16 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl bg-white"
+              onClick={(e) => e.stopPropagation()}>
+              {/* Header */}
+              <div className="flex items-start justify-between px-7 py-6 sticky top-0 bg-white border-b border-slate-100">
+                <div>
+                  <p className="text-[10px] font-heading font-bold uppercase tracking-[0.2em] mb-1" style={{ color: "#c9a34b" }}>In Memoriam</p>
+                  <h2 className="font-heading font-black text-xl" style={{ color: "#173962" }}>Honoring John Babirukamu</h2>
+                  <p className="text-sm text-slate-400 mt-0.5">A Legacy That Redefined Uganda&apos;s Digital Landscape</p>
+                </div>
+                <button onClick={() => setShowTribute(false)}
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all shrink-0 mt-0.5">
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+              {/* Content */}
+              <div className="px-7 py-6 space-y-4 text-[15px] text-slate-600 leading-relaxed">
+                {/* Pull quote */}
+                <div className="rounded-2xl p-5 mb-2" style={{ background: "linear-gradient(135deg, #0a1628, #173962)", border: "1px solid rgba(201,163,75,0.2)" }}>
+                  <p className="text-sm font-heading font-semibold text-white leading-relaxed">
+                    &ldquo;Some contributions are visible in campaigns, platforms, and institutions, others are deeper, embedded in the systems, standards, and thinking that continue to shape an entire industry long after their originators are gone. John Birungi Babirukamu belongs to the latter.&rdquo;
+                  </p>
+                </div>
+                <p>As Uganda reflects on his life and legacy, it becomes increasingly clear that his influence extends far beyond the roles he held or the organizations he served. He was not merely a participant in the rise of digital communication in Uganda — he was one of its key architects. At a time when the digital space was still being defined, John brought structure to uncertainty, discipline to experimentation, and strategy to a field still finding its professional identity.</p>
+                <p>He saw digital communication not as a supplementary tool, but as a core business function — one that required systems thinking, governance, and measurable impact. In doing so, he helped transform digital marketing in Uganda from an emerging practice into a credible, data-driven discipline.</p>
+                <p>With over 14 years of experience as a certified Management Information Systems expert and strategist, John operated at the intersection of technology, communication, and institutional transformation.</p>
+                <p>A defining chapter of his career was at <strong className="font-semibold" style={{ color: "#173962" }}>Next Media Services</strong>, where he served as Head of Digital Marketing for over five years — leading the company&apos;s first digital marketing strategy, establishing its social media governance framework, and rebuilding its digital ecosystem. His work became a national benchmark, introducing interactive platforms for NBS TV, live streaming infrastructure, and early video streaming applications.</p>
+                <p>John later moved to <strong className="font-semibold" style={{ color: "#173962" }}>Metropolitan Republic</strong>, bridging storytelling and performance, then to <strong className="font-semibold" style={{ color: "#173962" }}>MTN Uganda</strong> as Digital Communications Manager during a critical phase of the company&apos;s digital expansion.</p>
+                <p>He also contributed to QG Group, NTV Uganda, Uganda Breweries Limited, Equity Bank, BRAC, and Sheraton Kampala — consistently championing systems thinking, governance, information security, and data integrity.</p>
+                <p>As <strong className="font-semibold" style={{ color: "#173962" }}>General Manager at Hedge Marketing</strong>, he delivered 600% revenue growth, managing multinational accounts including Prudential Africa PLC, Uganda Baati, Opportunity Bank, EFC Bank, Housing Finance Bank, and AAR Insurance.</p>
+                <p>He held an Executive MBA from the University of Suffolk, ISO certifications, membership in the Chartered Institute of Marketing UK and the Uganda Marketers&apos; Society — and was a <strong className="font-semibold" style={{ color: "#173962" }}>founding Vice President of the Uganda Digital Society</strong>.</p>
+                <p>Yet beyond strategy, those who knew John remember his humanity — a mentor who invested deeply in others, a steady presence in a fast-moving industry, and an unwavering commitment to growing the next generation of digital professionals.</p>
+                <div className="pt-5 border-t border-slate-100 text-center text-sm text-slate-500 italic">
+                  In remembering John Babirukamu, we are not only looking back — we are reaffirming the standards, values, and vision he left behind.
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
