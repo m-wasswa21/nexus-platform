@@ -28,3 +28,7 @@ export function logout() {
 export function getToken() {
   return typeof window !== "undefined" ? localStorage.getItem("nexus_token") : null;
 }
+
+export function setToken(token: string) {
+  localStorage.setItem("nexus_token", token);
+}

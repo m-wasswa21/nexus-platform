@@ -13,6 +13,11 @@ class Settings(BaseSettings):
 
     DATABASE_URL: str = "sqlite+aiosqlite:///./nexus.db"
 
+    GOOGLE_CLIENT_ID: str = ""
+    GOOGLE_CLIENT_SECRET: str = ""
+    GOOGLE_REDIRECT_URI: str = "http://localhost:8000/api/auth/google/callback"
+    FRONTEND_URL: str = "http://localhost:3000"
+
     BACKEND_CORS_ORIGINS: str = (
         "http://localhost:3000,"
         "http://localhost:3001,"
