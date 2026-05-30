@@ -206,6 +206,62 @@ export default function ContributePage() {
 
       </div>
 
+      {/* ── Tribute ── */}
+      <section className="py-16 px-6 bg-white border-b border-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+            {/* Header */}
+            <div className="text-center mb-10">
+              <p className="text-[11px] font-heading font-bold uppercase tracking-[0.22em] mb-3" style={{ color: "#c9a34b" }}>In Memoriam</p>
+              <h2 className="font-heading text-3xl md:text-4xl font-black mb-2" style={{ color: "#173962" }}>Honoring John Babirukamu</h2>
+              <p className="text-lg text-slate-500 font-body">A Legacy That Redefined Uganda&apos;s Digital Landscape</p>
+            </div>
+
+            {/* Pull quote */}
+            <div className="rounded-2xl p-6 mb-10 text-center"
+              style={{ background: "linear-gradient(135deg, #0a1628, #173962)", border: "1px solid rgba(201,163,75,0.2)" }}>
+              <p className="text-lg md:text-xl font-heading font-semibold text-white leading-relaxed">
+                &ldquo;Some contributions are visible in campaigns, platforms, and institutions, others are deeper, embedded in the systems, standards, and thinking that continue to shape an entire industry long after their originators are gone. John Birungi Babirukamu belongs to the latter.&rdquo;
+              </p>
+            </div>
+
+            {/* Body text */}
+            <div className="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed text-[15px]">
+              <p>As Uganda reflects on his life and legacy, it becomes increasingly clear that his influence extends far beyond the roles he held or the organizations he served. He was not merely a participant in the rise of digital communication in Uganda — he was one of its key architects. At a time when the digital space was still being defined, John brought structure to uncertainty, discipline to experimentation, and strategy to a field still finding its professional identity.</p>
+              <p>He saw digital communication not as a supplementary tool, but as a core business function — one that required systems thinking, governance, and measurable impact. In doing so, he helped transform digital marketing in Uganda from an emerging practice into a credible, data-driven discipline.</p>
+              <p>With over 14 years of experience as a certified Management Information Systems expert and strategist, John operated at the intersection of technology, communication, and institutional transformation. His work reshaped how organizations, media houses, and brands understood and engaged with digital platforms.</p>
+              <p>A defining chapter of his career was at <strong className="text-navy font-semibold">Next Media Services</strong>, where he served as Head of Digital Marketing for over five years. He led the development of the company&apos;s first digital marketing strategy, established its foundational social media governance framework, and rebuilt its digital ecosystem from the ground up. Under his leadership, Next Media&apos;s digital transformation became a national benchmark — introducing interactive platforms for NBS TV, live streaming infrastructure, and early video streaming applications that redefined how Uganda consumed news and content.</p>
+              <p>John later transitioned to <strong className="text-navy font-semibold">Metropolitan Republic</strong>, where he strengthened the link between storytelling and performance, ensuring creativity was supported by data, insight, and measurable outcomes. His journey then led to <strong className="text-navy font-semibold">MTN Uganda</strong>, where he served as Digital Communications Manager during a critical phase of the company&apos;s digital expansion, strengthening corporate communications in a rapidly evolving telecommunications landscape.</p>
+              <p>Beyond these roles, John contributed his expertise to QG Group, NTV Uganda, Uganda Breweries Limited, Equity Bank, BRAC, and Sheraton Kampala — consistently championing a discipline grounded in systems thinking, governance, information security, and data integrity.</p>
+              <p>As <strong className="text-navy font-semibold">General Manager at Hedge Marketing</strong>, his leadership reached its most transformative phase. He turned a small agency into a strong mid-sized competitor, delivering an extraordinary 600 percent growth in revenue and expanding capacity to manage complex multinational accounts including Prudential Africa PLC, Uganda Baati, Opportunity Bank, EFC Bank, Housing Finance Bank, and AAR Insurance.</p>
+              <p>His professional development included ISO certifications and an Executive MBA from the University of Suffolk. He was a member of the Chartered Institute of Marketing UK, the Uganda Marketers&apos; Society, and a <strong className="text-navy font-semibold">founding Vice President of the Uganda Digital Society</strong> — where he played a pivotal role in shaping industry standards and community development.</p>
+              <p>Yet beyond strategy and systems, those who worked with John remember something even more enduring — his humanity. He was a mentor who invested deeply in others, a leader who gave generously of his time, and a steady presence in a fast-moving industry. His commitment to developing the next generation of digital professionals remains one of his most meaningful contributions.</p>
+
+              {/* Closing invitation */}
+              <div className="mt-8 pt-6 border-t border-slate-200 text-center">
+                <p className="text-slate-700 text-base mb-4">
+                  To honor his legacy is to continue the work he began — building systems that last, sharing knowledge that empowers, and raising a generation that leads with both competence and integrity.
+                </p>
+                <p className="text-slate-600 text-sm mb-4 italic">
+                  In recognition of his enduring impact, the Uganda Digital Society invites colleagues, partners, and professionals whose lives and careers were shaped by his work to the Annual John Babirukamu Memorial Lecture, themed:
+                </p>
+                <p className="font-heading font-black text-lg mb-5" style={{ color: "#173962" }}>
+                  &ldquo;Creating Digital Leaders through Mentorship and Knowledge Sharing&rdquo;
+                </p>
+                <div className="flex flex-wrap justify-center gap-5 text-sm text-slate-500 mb-6">
+                  <span>📍 UICT Innovation Hub, Nakawa</span>
+                  <span>📅 Saturday, May 30th</span>
+                  <span>⏰ 10:00 AM – 12:00 Noon</span>
+                </div>
+                <p className="text-slate-500 text-sm italic">
+                  In remembering John Babirukamu, we are not only looking back — we are reaffirming the standards, values, and vision he left behind.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Body ── */}
       <div className="max-w-6xl mx-auto px-5 py-10">
         <div className="grid lg:grid-cols-[420px_1fr] gap-8 items-start">
