@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/api";
 import { Board } from "@/types";
 import { useState } from "react";
+import { useAuth } from "@/hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,6 +32,7 @@ const stagger = { show: { transition: { staggerChildren: 0.09 } } };
 
 export default function ContributePage() {
   const { id } = useParams<{ id: string }>();
+  const { user } = useAuth();
   const boardKey = ["board-public", id];
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -322,7 +324,7 @@ export default function ContributePage() {
                         post={post}
                         boardId={Number(id)}
                         creatorId={board.creator_id}
-                        allowDelete={false}
+                        allowDelete={user?.id === board.creator_id}
                       />
                     </motion.div>
                   ))}
