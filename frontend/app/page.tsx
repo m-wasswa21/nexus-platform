@@ -75,44 +75,68 @@ export default function LandingPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 py-32 w-full grid lg:grid-cols-2 gap-16 items-center">
           <div>
+            {/* Logos */}
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 backdrop-blur-sm"
+              className="flex items-center gap-3 mb-6 opacity-80">
+              <Image src="/uds-logo.png" alt="Uganda Digital Society" width={90} height={30} className="h-7 w-auto object-contain brightness-0 invert" />
+              <div className="w-px h-5 bg-white/30" />
+              <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={90} height={30} className="h-6 w-auto object-contain brightness-0 invert" />
+            </motion.div>
+
+            {/* Badge */}
+            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 backdrop-blur-sm"
               style={{ backgroundColor: "rgba(201,163,75,0.1)", border: "1px solid rgba(201,163,75,0.25)" }}>
               <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#c9a34b" }} />
               <span className="text-xs font-heading font-semibold tracking-[0.2em] uppercase" style={{ color: "#c9a34b" }}>
-                Building Trusted Digital Leadership
+                Featured Event
               </span>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }}
-              className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6" style={{ color: "#c9a34b" }}>
-              Where Leaders <span className="text-white">Grow</span><br />
-              and Communities <span className="text-white">Thrive</span>
+              className="font-heading text-4xl md:text-5xl lg:text-6xl font-black leading-[1.05] mb-4" style={{ color: "#c9a34b" }}>
+              1<sup className="text-2xl">st</sup> John Babirukamu<br />
+              <span className="text-white">Annual Memorial Lecture</span>
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-xl md:text-2xl mb-10 max-w-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
-              Professional mentorship matching and group appreciation boards —
-              the community platform built for Africa&#39;s CIO/CxO leaders.
+            <motion.p initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.28 }}
+              className="text-base md:text-lg mb-6 max-w-xl leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+              <span className="font-semibold text-white">Theme: </span>
+              Creating Digital Leaders Through Mentorship and Knowledge Sharing
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.45 }}
-              className="flex items-center gap-4">
-              <Link href="/register" className="btn-primary text-base">
-                Join the Community <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/login"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-sm border-2 transition-all duration-300 hover:scale-105"
-                style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.85)" }}>
-                Sign In
-              </Link>
+            {/* Event details chips */}
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.38 }}
+              className="flex flex-wrap gap-3 mb-8">
+              {[
+                { icon: Calendar, text: "Saturday, 30th May 2026" },
+                { icon: Clock,    text: "10:00 AM – 12:00 PM" },
+                { icon: MapPin,   text: "National ICT Hub" },
+              ].map(({ icon: Icon, text }) => (
+                <div key={text} className="flex items-center gap-2 px-3 py-2 rounded-xl backdrop-blur-sm"
+                  style={{ backgroundColor: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)" }}>
+                  <Icon className="w-3.5 h-3.5 shrink-0" style={{ color: "#c9a34b" }} />
+                  <span className="text-xs font-heading font-semibold text-white">{text}</span>
+                </div>
+              ))}
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }}
-              className="flex items-center gap-3 mt-8 opacity-60">
-              <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={100} height={30} className="h-7 w-auto object-contain brightness-0 invert" />
-              <div className="w-px h-5 bg-white/30" />
-              <Image src="/uds-logo.png" alt="Uganda Digital Society" width={80} height={30} className="h-7 w-auto object-contain brightness-0 invert" />
+            {/* CTAs */}
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.48 }}
+              className="flex flex-wrap items-center gap-4">
+              <Link
+                href="https://jbannualmemoriallecture.org/boards/4/contribute"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                style={{ background: "linear-gradient(135deg, #c9a34b, #e8c76a)", color: "#0a1628" }}>
+                Leave a Message <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/register"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-sm border-2 transition-all duration-300 hover:scale-105"
+                style={{ borderColor: "rgba(255,255,255,0.2)", color: "rgba(255,255,255,0.85)" }}>
+                Join the Community
+              </Link>
             </motion.div>
           </div>
 
@@ -141,86 +165,6 @@ export default function LandingPage() {
                   </div>
                 ))}
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ── JB MEMORIAL LECTURE ────────────────────────────────────── */}
-      <section className="py-12 px-6" style={{ backgroundColor: "#f8faff" }}>
-        <div className="max-w-6xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="rounded-3xl overflow-hidden shadow-2xl"
-            style={{ background: "linear-gradient(135deg, #0a1628 0%, #173962 60%, #1e4a7c 100%)", border: "1px solid rgba(201,163,75,0.25)" }}>
-            <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none" />
-            <div className="relative grid lg:grid-cols-[1fr_auto] gap-0 items-stretch">
-
-              {/* Left — content */}
-              <div className="p-8 md:p-12">
-                {/* Live badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-                  style={{ backgroundColor: "rgba(201,163,75,0.15)", border: "1px solid rgba(201,163,75,0.35)" }}>
-                  <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#c9a34b" }} />
-                  <span className="text-[11px] font-heading font-bold tracking-[0.18em] uppercase" style={{ color: "#c9a34b" }}>
-                    Featured Event
-                  </span>
-                </div>
-
-                {/* Logos */}
-                <div className="flex items-center gap-3 mb-5 opacity-70">
-                  <Image src="/uds-logo.png" alt="Uganda Digital Society" width={80} height={28} className="h-6 w-auto object-contain brightness-0 invert" />
-                  <div className="w-px h-4 bg-white/30" />
-                  <Image src="/cio-logo.png" alt="CIO/CxO Forum" width={80} height={28} className="h-5 w-auto object-contain brightness-0 invert" />
-                </div>
-
-                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight mb-3">
-                  1<sup className="text-lg">st</sup> John Babirukamu<br />
-                  <span style={{ color: "#c9a34b" }}>Annual Memorial Lecture</span>
-                </h2>
-
-                <p className="text-base md:text-lg mb-6 max-w-xl" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  <span className="font-semibold text-white">Theme: </span>
-                  Creating Digital Leaders Through Mentorship and Knowledge Sharing
-                </p>
-
-                {/* Event details */}
-                <div className="flex flex-wrap gap-4 mb-8">
-                  {[
-                    { icon: Calendar, text: "Saturday, 30th May 2026" },
-                    { icon: Clock,    text: "10:00 AM – 12:00 PM" },
-                    { icon: MapPin,   text: "National ICT Hub" },
-                  ].map(({ icon: Icon, text }) => (
-                    <div key={text} className="flex items-center gap-2 px-3 py-2 rounded-xl"
-                      style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}>
-                      <Icon className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
-                      <span className="text-sm font-heading font-semibold text-white">{text}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <Link
-                  href="https://jbannualmemoriallecture.org/boards/4/contribute"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  style={{ background: "linear-gradient(135deg, #c9a34b, #e8c76a)", color: "#0a1628" }}>
-                  Leave a Message on the Board <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-
-              {/* Right — decorative accent */}
-              <div className="hidden lg:flex items-center justify-center p-12 pr-14">
-                <div className="text-center">
-                  <div className="w-32 h-32 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl"
-                    style={{ background: "linear-gradient(135deg, rgba(201,163,75,0.2), rgba(201,163,75,0.05))", border: "2px solid rgba(201,163,75,0.3)" }}>
-                    <Image src="/uds-logo.png" alt="Uganda Digital Society" width={72} height={72} className="w-16 h-16 object-contain brightness-0 invert opacity-80" />
-                  </div>
-                  <p className="text-[11px] font-heading font-bold uppercase tracking-[0.2em] text-white/40">In Memoriam</p>
-                  <p className="text-base font-heading font-black text-white/80 mt-1">John Babirukamu</p>
-                </div>
-              </div>
-
             </div>
           </motion.div>
         </div>
