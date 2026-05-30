@@ -108,24 +108,6 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Divider */}
-          <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-slate-200" /></div>
-            <div className="relative flex justify-center"><span className="bg-white px-3 text-xs text-slate-400 font-heading font-semibold">or continue with</span></div>
-          </div>
-
-          {/* Google */}
-          <a href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/google/login`}
-            className="flex items-center justify-center gap-3 w-full h-11 rounded-xl border-2 border-slate-200 bg-white hover:bg-slate-50 hover:border-slate-300 transition-all font-heading font-semibold text-sm text-slate-700">
-            <svg width="18" height="18" viewBox="0 0 48 48">
-              <path fill="#4285F4" d="M44.5 20H24v8.5h11.8C34.6 33.1 30 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.7 1.1 7.8 2.9l6.1-6.1C34.4 6.5 29.5 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5c11 0 20.5-8 20.5-20.5 0-1.4-.1-2.7-.5-4z"/>
-              <path fill="#34A853" d="M6.3 14.7l7 5.1C15 16.1 19.1 13.5 24 13.5c3 0 5.7 1.1 7.8 2.9l6.1-6.1C34.4 6.5 29.5 4.5 24 4.5c-7.7 0-14.3 4.4-17.7 10.2z"/>
-              <path fill="#FBBC05" d="M24 45.5c5.4 0 10.3-1.8 14-4.9l-6.5-5.3C29.6 36.9 27 37.5 24 37.5c-5.9 0-10.5-3.8-11.7-9l-6.9 5.4C8.6 41.2 15.7 45.5 24 45.5z"/>
-              <path fill="#EA4335" d="M44.5 20H24v8.5h11.8c-.9 2.7-2.7 5-5.1 6.5l6.5 5.3c3.8-3.5 6.3-8.7 6.3-15.3 0-1.4-.1-2.7-.5-4z"/>
-            </svg>
-            Continue with Google
-          </a>
-
           <p className="text-center text-sm text-slate-500 mt-5">
             Don&#39;t have an account?{" "}
             <Link href="/register" className="font-heading font-bold hover:opacity-80 transition-opacity" style={{ color: "#c9a34b" }}>Register</Link>
