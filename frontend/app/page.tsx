@@ -2,7 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Handshake, PartyPopper, Users, Calendar, Clock, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle, Handshake, PartyPopper, Users, Calendar, Clock, MapPin, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 const stats = [
   { value: "113+", label: "Community Members" },
@@ -25,6 +26,8 @@ const compare = [
 ];
 
 export default function LandingPage() {
+  const { user, logout } = useAuth();
+
   return (
     <div className="min-h-screen bg-white font-body">
 
@@ -45,13 +48,27 @@ export default function LandingPage() {
             ))}
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/login"
-              className="px-4 py-2 rounded-full text-sm font-semibold font-heading text-navy/70 hover:text-navy hover:bg-navy/5 transition-all duration-200">
-              Sign In
-            </Link>
-            <Link href="/register" className="btn-cta text-sm">
-              Join the Forum <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {user ? (
+              <>
+                <Link href="/dashboard"
+                  className="px-4 py-2 rounded-full text-sm font-semibold font-heading text-navy/70 hover:text-navy hover:bg-navy/5 transition-all duration-200">
+                  Dashboard
+                </Link>
+                <button onClick={logout} className="btn-cta text-sm">
+                  Sign Out <LogOut className="w-3.5 h-3.5" />
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href="/login"
+                  className="px-4 py-2 rounded-full text-sm font-semibold font-heading text-navy/70 hover:text-navy hover:bg-navy/5 transition-all duration-200">
+                  Sign In
+                </Link>
+                <Link href="/register" className="btn-cta text-sm">
+                  Join the Forum <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
