@@ -204,6 +204,22 @@ export default function ContributePage() {
             <div className="w-px h-4 bg-white/40" />
             <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain brightness-0 invert" />
           </motion.div>
+
+          {/* Quick-access buttons */}
+          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 mt-5">
+            <button onClick={() => setShowProgramme(true)}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-heading font-semibold text-xs transition-all hover:scale-105 active:scale-95 backdrop-blur-sm"
+              style={{ backgroundColor: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "white" }}>
+              <CalendarDays className="w-3.5 h-3.5" style={{ color: "#c9a34b" }} />
+              View Programme
+            </button>
+            <button onClick={() => setShowTribute(true)}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-full font-heading font-semibold text-xs transition-all hover:scale-105 active:scale-95 backdrop-blur-sm"
+              style={{ backgroundColor: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "white" }}>
+              <BookOpen className="w-3.5 h-3.5" style={{ color: "#c9a34b" }} />
+              About John
+            </button>
+          </motion.div>
         </div>
 
       </div>
@@ -289,21 +305,6 @@ export default function ContributePage() {
               <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity" />
             </div>
 
-            {/* Quick-access buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              <button onClick={() => setShowProgramme(true)}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl border-2 font-heading font-semibold text-xs transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
-                style={{ borderColor: "rgba(23,57,98,0.15)", color: "#173962", backgroundColor: "rgba(23,57,98,0.04)" }}>
-                <CalendarDays className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
-                View Programme
-              </button>
-              <button onClick={() => setShowTribute(true)}
-                className="flex items-center gap-2 px-4 py-3 rounded-xl border-2 font-heading font-semibold text-xs transition-all hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
-                style={{ borderColor: "rgba(23,57,98,0.15)", color: "#173962", backgroundColor: "rgba(23,57,98,0.04)" }}>
-                <BookOpen className="w-4 h-4 shrink-0" style={{ color: "#c9a34b" }} />
-                About John
-              </button>
-            </div>
           </div>
 
           {/* ── RIGHT — Posts ── */}
