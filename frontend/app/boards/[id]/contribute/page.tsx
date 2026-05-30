@@ -286,6 +286,34 @@ export default function ContributePage() {
               <div className="w-px h-5 bg-slate-300" />
               <Image src="/uds-logo.png" alt="Uganda Digital Society" width={70} height={28} className="h-6 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity" />
             </div>
+
+            {/* Running Order */}
+            <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+              <div className="px-5 py-4" style={{ background: "linear-gradient(135deg, #0a1628, #173962)" }}>
+                <p className="text-[10px] font-heading font-bold uppercase tracking-[0.18em] mb-0.5" style={{ color: "#c9a34b" }}>Programme</p>
+                <p className="text-white font-heading font-black text-sm">Running Order</p>
+                <p className="text-[11px] mt-0.5" style={{ color: "rgba(255,255,255,0.5)" }}>30 May 2026 · 09:30 – 12:00 · ICT Innovation Hub</p>
+              </div>
+              <div className="divide-y divide-slate-100">
+                {[
+                  { time: "09:30 – 10:00", activity: "Arrival & SOPs",                                        person: "All" },
+                  { time: "10:00 – 10:10", activity: "Welcome remarks & the industry side of John",           person: "John Ssenkeezi, President – Uganda Digital Society" },
+                  { time: "10:10 – 10:20", activity: "Remembering John as a son and brother",                 person: "Family representative" },
+                  { time: "10:20 – 11:00", activity: "Keynote: Creating digital leaders through mentorship and knowledge sharing", person: "Collin Babirukamu, ED IT – Bank of Uganda · Chairperson Advisory Board, CIO Forum" },
+                  { time: "11:00 – 11:15", activity: "Mental wellness: building healthy, grounded leadership", person: "Dr. Grace Bikumbi – MindLyfe" },
+                  { time: "11:15 – 11:30", activity: "About the John Babirukamu Mentorship Programme",        person: "Patricia Kahill, Director Education & Training – Uganda Digital Society" },
+                  { time: "11:30 – 11:35", activity: "Remarks by the CIO Forum",                              person: "Jonathan Kayemba, Chairperson Board of Governors" },
+                  { time: "11:35 – 11:45", activity: "Audience reactions or comments",                        person: "Facilitated by the Emcee" },
+                  { time: "11:45 – 12:00", activity: "Closing remarks",                                       person: "Joan Generous Asaba, Vice President – Uganda Digital Society" },
+                ].map(({ time, activity, person }) => (
+                  <div key={time} className="px-5 py-3 hover:bg-slate-50 transition-colors">
+                    <p className="text-[10px] font-heading font-bold tabular-nums mb-0.5" style={{ color: "#c9a34b" }}>{time}</p>
+                    <p className="text-xs font-heading font-semibold leading-snug mb-0.5" style={{ color: "#173962" }}>{activity}</p>
+                    <p className="text-[11px] text-slate-400 leading-snug">{person}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* ── RIGHT — Posts ── */}
